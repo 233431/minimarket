@@ -1,0 +1,29 @@
+<div class="detalle-pedido-container">
+    <h1>Formulario de Detalle Pedido</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="idPedido">ID Pedido:</label>
+        <input type="text" id="idPedido" [(ngModel)]="detallePedido.id_pedido" name="idPedido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="idProducto">ID Producto:</label>
+        <input type="text" id="idProducto" [(ngModel)]="detallePedido.id_producto" name="idProducto" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="totalProductos">Total de Productos:</label>
+        <input type="number" id="totalProductos" [(ngModel)]="detallePedido.total_productos" name="totalProductos" required>
+      </div>
+  
+      <button type="submit">Guardar Detalle Pedido</button>
+    </form>
+  
+    <div *ngIf="submitted">
+      <h2>Detalle Pedido Guardado</h2>
+      <p><strong>ID Pedido:</strong> {{ detallePedido.id_pedido }}</p>
+      <p><strong>ID Producto:</strong> {{ detallePedido.id_producto }}</p>
+      <p><strong>Total de Productos:</strong> {{ detallePedido.total_productos }}</p>
+    </div>
+  </div>
+  

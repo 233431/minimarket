@@ -1,0 +1,47 @@
+<div class="pedido-container">
+    <h1>Formulario de Pedido</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="idPedido">ID Pedido:</label>
+        <input type="text" id="idPedido" [(ngModel)]="pedido.id_pedido" name="idPedido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="idDetallePedido">ID Detalle Pedido:</label>
+        <input type="text" id="idDetallePedido" [(ngModel)]="pedido.id_detalle_pedido" name="idDetallePedido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="horaSalida">Hora de Salida:</label>
+        <input type="time" id="horaSalida" [(ngModel)]="pedido.hora_salida" name="horaSalida" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="horaLlegada">Hora de Llegada:</label>
+        <input type="time" id="horaLlegada" [(ngModel)]="pedido.hora_llegada" name="horaLlegada" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="horaTiempoReal">Hora en Tiempo Real:</label>
+        <input type="time" id="horaTiempoReal" [(ngModel)]="pedido.hora_tiempo_real" name="horaTiempoReal" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="idUsuario">ID Usuario (quien hace el pedido):</label>
+        <input type="text" id="idUsuario" [(ngModel)]="pedido.id_usuario" name="idUsuario" required>
+      </div>
+  
+      <button type="submit">Guardar Pedido</button>
+    </form>
+  
+    <div *ngIf="submitted">
+      <h2>Pedido Guardado</h2>
+      <p><strong>ID Pedido:</strong> {{ pedido.id_pedido }}</p>
+      <p><strong>ID Detalle Pedido:</strong> {{ pedido.id_detalle_pedido }}</p>
+      <p><strong>Hora de Salida:</strong> {{ pedido.hora_salida }}</p>
+      <p><strong>Hora de Llegada:</strong> {{ pedido.hora_llegada }}</p>
+      <p><strong>Hora en Tiempo Real:</strong> {{ pedido.hora_tiempo_real }}</p>
+      <p><strong>ID Usuario:</strong> {{ pedido.id_usuario }}</p>
+    </div>
+  </div>
+  

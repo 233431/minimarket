@@ -1,0 +1,53 @@
+<div class="producto-container">
+    <h1>Formulario de Producto</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="idProducto">ID Producto:</label>
+        <input type="text" id="idProducto" [(ngModel)]="producto.id_producto" name="idProducto" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="nombreProducto">Nombre del Producto:</label>
+        <input type="text" id="nombreProducto" [(ngModel)]="producto.nombre_producto" name="nombreProducto" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" [(ngModel)]="producto.precio" name="precio" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cantidad">Cantidad Disponible:</label>
+        <input type="number" id="cantidad" [(ngModel)]="producto.cantidad_disponible" name="cantidad" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" [(ngModel)]="producto.categoria" name="categoria" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="idUsuario">ID Usuario (relacionado):</label>
+        <input type="text" id="idUsuario" [(ngModel)]="producto.id_usuario" name="idUsuario" required>
+      </div>
+  
+      <button type="submit">Guardar Producto</button>
+    </form>
+  
+    <div *ngIf="submitted">
+      <h2>Producto Guardado</h2>
+      <p><strong>ID Producto:</strong> {{ producto.id_producto }}</p>
+      <p><strong>Nombre del Producto:</strong> {{ producto.nombre_producto }}</p>
+      <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+      <p><strong>Precio:</strong> {{ producto.precio }}</p>
+      <p><strong>Cantidad Disponible:</strong> {{ producto.cantidad_disponible }}</p>
+      <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+      <p><strong>ID Usuario:</strong> {{ producto.id_usuario }}</p>
+    </div>
+  </div>
+  
